@@ -168,7 +168,7 @@ function TierCard({
   tagline: string;
   price: string;
   setup: string;
-  features: string[];
+  features: readonly string[];
   cta: string;
   emphasized: boolean;
 }) {
