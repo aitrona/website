@@ -47,6 +47,7 @@ This project is configured for static export in `next.config.mjs`:
 - `output: "export"`
 - `trailingSlash: true`
 - `images.unoptimized: true`
+- GitHub Pages support via `NEXT_PUBLIC_BASE_PATH`
 
 Build:
 
@@ -55,6 +56,36 @@ npm run build
 ```
 
 The static site will be generated into the `out/` folder.
+
+## Deploy to GitHub Pages
+
+This repo includes a GitHub Actions workflow at `.github/workflows/deploy-pages.yml` that publishes the **static export** (`out/`) to GitHub Pages.
+
+### 1) Push to GitHub
+
+Create a GitHub repo and push this project to the `main` branch.
+
+### 2) Enable Pages
+
+In your GitHub repo:
+
+- Go to **Settings → Pages**
+- Under **Build and deployment**, choose **GitHub Actions**
+
+### 3) Set base path (important for project pages)
+
+If your site will be hosted at `https://<username>.github.io/<repo-name>/`:
+
+- Go to **Settings → Secrets and variables → Actions → Variables**
+- Add a variable:
+  - Name: `NEXT_PUBLIC_BASE_PATH`
+  - Value: `/<repo-name>`
+
+If you’re hosting at the domain root (user/organization pages or custom domain), you can leave it empty.
+
+### 4) Deploy
+
+Push to `main` and the workflow will deploy automatically. You can also run it from the **Actions** tab.
 
 ## Deploy to Hostinger (static hosting)
 
@@ -88,5 +119,5 @@ npm run build
 ## Notes
 
 - Anchored navigation uses smooth scrolling and section offsets (`scroll-mt-*`), so the sticky navbar doesn’t cover headings.
-- Theme toggle uses `localStorage` and Tailwind `dark` class.
+- The site is configured for static export (`out/`) for both Hostinger and GitHub Pages.
 
