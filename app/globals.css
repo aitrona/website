@@ -1,0 +1,94 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+:root {
+  /* Light theme – soft, neutral, SaaS style */
+  --background: 210 40% 98%;
+  --foreground: 222 47% 11%;
+  --card: 0 0% 100%;
+  --card-foreground: 222 47% 11%;
+  --muted: 210 40% 96%;
+  --muted-foreground: 215 16% 42%;
+  --border: 214 32% 88%;
+  --primary: 236 83% 55%;
+  --primary-foreground: 0 0% 100%;
+  --accent: 191 97% 50%;
+  --accent-foreground: 222 47% 11%;
+  --ring: 236 83% 55%;
+}
+
+.dark {
+  /* Dark theme – premium AI gradient-ready base */
+  --background: 220 33% 4%;
+  --foreground: 210 40% 98%;
+  --card: 222 47% 6%;
+  --card-foreground: 210 40% 98%;
+  --muted: 222 40% 9%;
+  --muted-foreground: 215 18% 72%;
+  --border: 222 40% 16%;
+  --primary: 236 83% 70%;
+  --primary-foreground: 222 47% 6%;
+  --accent: 191 97% 60%;
+  --accent-foreground: 210 40% 98%;
+  --ring: 236 83% 70%;
+}
+
+html {
+  scroll-behavior: smooth;
+}
+
+body {
+  background-color: hsl(var(--background));
+  color: hsl(var(--foreground));
+  text-rendering: optimizeLegibility;
+  font-feature-settings: "cv02", "cv03", "cv04", "cv11";
+}
+
+::selection {
+  background: rgba(129, 140, 248, 0.4);
+}
+
+.bg-grid {
+  background-size: 80px 80px;
+  background-position: center;
+}
+
+.text-gradient {
+  background: linear-gradient(
+    120deg,
+    rgba(129, 140, 248, 1),
+    rgba(56, 189, 248, 1),
+    rgba(244, 114, 182, 1)
+  );
+  -webkit-background-clip: text;
+  background-clip: text;
+  color: transparent;
+}
+
+.animated-mesh {
+  background:
+    radial-gradient(circle at 10% 20%, rgba(56, 189, 248, 0.15), transparent 55%),
+    radial-gradient(circle at 80% 0%, rgba(129, 140, 248, 0.3), transparent 55%),
+    radial-gradient(circle at 0% 80%, rgba(236, 72, 153, 0.2), transparent 55%),
+    radial-gradient(circle at 100% 80%, rgba(52, 211, 153, 0.15), transparent 55%);
+  animation: meshMove 24s ease-in-out infinite alternate;
+}
+
+.noise {
+  background-image: url("data:image/svg+xml,%3Csvg viewBox='0 0 160 160' xmlns='http://www.w3.org/2000/svg'%3E%3Cfilter id='n' x='0' y='0'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.9' numOctaves='4' stitchTiles='noStitch'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23n)' opacity='0.5'/%3E%3C/svg%3E");
+  mix-blend-mode: soft-light;
+}
+
+@keyframes meshMove {
+  0% {
+    transform: translate3d(0, 0, 0) scale(1);
+  }
+  50% {
+    transform: translate3d(-2%, -1%, 0) scale(1.02);
+  }
+  100% {
+    transform: translate3d(2%, 2%, 0) scale(1.03);
+  }
+}
+
