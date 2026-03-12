@@ -1,8 +1,6 @@
 "use client";
 
-import { ArrowRight } from "lucide-react";
 import { Container } from "@/components/ui/Container";
-import { ButtonLink } from "@/components/ui/Button";
 import { Reveal } from "@/components/motion/Reveal";
 
 export function CTA() {
@@ -15,28 +13,23 @@ export function CTA() {
 
           <div className="relative mx-auto max-w-2xl text-center">
             <Reveal>
-              <h2 className="text-balance text-3xl font-semibold tracking-tight sm:text-4xl">
-                Let AI Handle Your Customers
-              </h2>
+              <h2 className="text-balance text-3xl font-semibold tracking-tight sm:text-4xl">Contact Us</h2>
             </Reveal>
             <Reveal delay={0.08}>
-              <p className="mt-4 text-pretty text-base text-muted-foreground sm:text-lg">
-                Book a demo to see WhatsApp, Instagram, and AI Receptionist working together — with your brand voice and your business rules.
-              </p>
-            </Reveal>
-            <Reveal delay={0.16}>
-              <div className="mt-7 flex flex-col justify-center gap-3 sm:flex-row">
-                <ButtonLink href="#demo" variant="secondary" size="lg" className="justify-center">
-                  Try the AI
-                </ButtonLink>
-                <ButtonLink href="mailto:founder.aitrona@gmail.com" size="lg" className="group justify-center">
-                  Book a Demo
-                  <ArrowRight className="h-4 w-4 transition-transform group-hover:translate-x-0.5" />
-                </ButtonLink>
+              <div className="mt-6 space-y-3 text-base text-muted-foreground sm:text-lg">
+                <p>
+                  Email:{" "}
+                  <a className="font-medium text-foreground hover:underline" href="mailto:founder.aitrona@gmail.com">
+                    founder.aitrona@gmail.com
+                  </a>
+                </p>
+                <p>
+                  Phone:{" "}
+                  <a className="font-medium text-foreground hover:underline" href="tel:+918097922903">
+                    +91 8097922903
+                  </a>
+                </p>
               </div>
-              <p className="mt-4 text-xs text-muted-foreground">
-                Contact: <span className="font-mono">founder.aitrona@gmail.com</span>
-              </p>
             </Reveal>
           </div>
         </div>
@@ -44,4 +37,3 @@ export function CTA() {
     </section>
   );
 }
-

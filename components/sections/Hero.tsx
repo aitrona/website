@@ -139,13 +139,13 @@ export function Hero() {
               <ArrowRight className="h-4 w-4 transition-transform group-hover:translate-x-0.5" />
             </ButtonLink>
             <ButtonLink
-              href="#contact"
+              href="#demo"
               size="lg"
               variant="secondary"
               className="justify-center"
-              aria-label="Book demo"
+              aria-label="Book a Demo Using Any of Our AIs"
             >
-              Book Demo
+              Book a Demo Using Any of Our AIs
             </ButtonLink>
           </div>
         </div>

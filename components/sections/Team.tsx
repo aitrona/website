@@ -1,6 +1,5 @@
 "use client";
 
-import Image from "next/image";
 import { Container } from "@/components/ui/Container";
 import { Card } from "@/components/ui/Card";
 import { SectionHeading } from "@/components/ui/SectionHeading";
@@ -9,17 +8,13 @@ import { Reveal } from "@/components/motion/Reveal";
 const founders = [
   {
     name: "Aarya Sharma",
-    title: "Co-Founder",
-    bio: "Focused on building delightful AI products that feel human, safe, and reliable at scale.",
-    imageSrc: "/founders/aarya-sharma.png",
-    objectPosition: "50% 12%"
+    title: "Co-Founder - AITRONA",
+    phone: "+91 9967242003"
   },
   {
     name: "Yash Bhalekar",
-    title: "Co-Founder",
-    bio: "Obsessed with converting conversations into revenue with automation that respects brand voice.",
-    imageSrc: "/founders/yash-bhalekar.png",
-    objectPosition: "50% 6%"
+    title: "Co-Founder - AITRONA",
+    phone: "+91 80971 36289"
   }
 ] as const;
 
@@ -48,37 +43,19 @@ export function Team() {
 function FounderCard({
   name,
   title,
-  bio,
-  imageSrc,
-  objectPosition
+  phone
 }: {
   name: string;
   title: string;
-  bio: string;
-  imageSrc: string;
-  objectPosition: string;
+  phone: string;
 }) {
   return (
-    <Card className="group p-6 transition">
-      <div className="flex items-center gap-4">
-        <div className="relative h-16 w-16 overflow-hidden rounded-2xl border border-border bg-muted/50">
-          <Image
-            src={imageSrc}
-            alt={`${name} headshot`}
-            fill
-            sizes="64px"
-            className="object-cover"
-            style={{ objectPosition }}
-          />
-          <div aria-hidden="true" className="absolute inset-0 ring-1 ring-white/10" />
-        </div>
-        <div>
-          <div className="text-base font-semibold">{name}</div>
-          <div className="text-sm text-muted-foreground">{title}</div>
-        </div>
+    <Card className="group p-6 text-center transition sm:p-8">
+      <div className="flex min-h-[112px] flex-col items-center justify-center gap-2">
+        <div className="text-lg font-semibold sm:text-xl">{name}</div>
+        <div className="text-sm text-muted-foreground sm:text-base">{title}</div>
+        <div className="text-sm text-muted-foreground/90">{phone}</div>
       </div>
-      <p className="mt-5 text-sm leading-relaxed text-muted-foreground">{bio}</p>
     </Card>
   );
 }
-

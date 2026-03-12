@@ -61,8 +61,8 @@ export function Navbar() {
         </nav>
 
         <div className="hidden items-center gap-2 md:flex">
-          <ButtonLink href="#contact" variant="primary" size="sm">
-            Book Demo
+          <ButtonLink href="#demo" variant="primary" size="sm">
+            Book a Demo Using Any of Our AIs
           </ButtonLink>
         </div>
 
@@ -92,8 +92,8 @@ export function Navbar() {
               <ButtonLink href="#demo" variant="secondary">
                 Try the AI
               </ButtonLink>
-              <ButtonLink href="#contact" variant="primary">
-                Book Demo
+              <ButtonLink href="#demo" variant="primary">
+                Book a Demo Using Any of Our AIs
               </ButtonLink>
             </div>
           </div>
@@ -102,4 +102,3 @@ export function Navbar() {
     </header>
   );
 }
-

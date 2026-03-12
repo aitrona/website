@@ -150,6 +150,18 @@ export function Pricing() {
             </Reveal>
           ))}
         </div>
+
+        <div className="mx-auto mt-8 max-w-3xl text-center text-xs leading-relaxed text-muted-foreground/80 sm:text-sm">
+          <p>
+            These prices apply to businesses with fewer than 5,000 Instagram followers and fewer
+            than 500 WhatsApp contacts.
+          </p>
+          <p className="mt-2">For larger audiences, pricing increases based on scale.</p>
+          <ul className="mt-3 list-disc space-y-1 text-center marker:text-muted-foreground/70">
+            <li className="list-inside">₹500 price increase for every additional 1,000 Instagram followers</li>
+            <li className="list-inside">₹500 price increase for every additional 100 WhatsApp contacts</li>
+          </ul>
+        </div>
       </Container>
     </section>
   );
@@ -216,4 +228,3 @@ function TierCard({
     </Card>
   );
 }
-
